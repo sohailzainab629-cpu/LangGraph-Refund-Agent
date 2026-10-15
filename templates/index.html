@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LangGraph Refund Agent</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <p class="eyebrow">AI CUSTOMER SUPPORT</p>
+            <h1>Refund Assistant</h1>
+            <p class="subtitle">
+                Submit a request and let the AI assistant review it.
+            </p>
+        </header>
+
+        <section class="panel">
+            <h2>Submit a request</h2>
+
+            <form id="supportForm">
+                <label for="message">Describe your issue</label>
+                <textarea
+                    id="message"
+                    placeholder="Example: I received a damaged product and want a refund."
+                    required
+                    minlength="3"
+                ></textarea>
+
+                <button type="submit" id="submitBtn">
+                    Submit Request
+                </button>
+            </form>
+        </section>
+
+        <section class="panel result-panel" id="resultPanel" hidden>
+            <h2>Request Status</h2>
+            <p id="statusText"></p>
+            <pre id="resultOutput"></pre>
+
+            <div id="reviewActions" hidden>
+                <p class="review-note">
+                    Human review is required. Approve or reject this request.
+                </p>
+                <div class="button-row">
+                    <button type="button" id="approveBtn" class="approve">
+                        Approve
+                    </button>
+                    <button type="button" id="rejectBtn" class="reject">
+                        Reject
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <p id="errorMessage" class="error" role="alert"></p>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
